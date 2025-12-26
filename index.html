@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Untuk Awak ❤️</title>
+
+  <!-- Google Font for cute look -->
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Patrick Hand', cursive;
+      background: linear-gradient(#ffe6f0, #fff);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .page {
+      display: none;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .active {
+      display: flex;
+    }
+
+    h1 {
+      color: #ff4d88;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #444;
+      max-width: 600px;
+      white-space: pre-line;
+    }
+
+    button {
+      padding: 15px 28px;
+      margin: 10px;
+      border: none;
+      border-radius: 30px;
+      background-color: #ff80bf;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff4d88;
+    }
+
+    img {
+      width: 200px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .rose {
+      position: absolute;
+      top: -50px;
+      animation: fall linear infinite;
+      font-size: 24px;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Background music -->
+<audio autoplay loop>
+  <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Falling roses -->
+<script>
+  for (let i = 0; i < 25; i++) {
+    const rose = document.createElement('div');
+    rose.className = 'rose';
+    rose.innerText = '🌹';
+    rose.style.left = Math.random() * 100 + 'vw';
+    rose.style.animationDuration = 5 + Math.random() * 6 + 's';
+    document.body.appendChild(rose);
+  }
+</script>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page active">
+  <h1>RINDU SAYA TAK? 🥺</h1>
+  <button onclick="rinduGila()">Rindu gila ❤️</button>
+  <button id="takRindu" onclick="takRindu()">Tak rindu pun 😒</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+  <h1>Pilih Hadiah 🎁</h1>
+  <button onclick="hadiah1()">Hadiah 1</button>
+  <button onclick="hadiah2()">Hadiah 2</button>
+  <button onclick="duaDua()">Dua-dua hadiah 💕</button>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="page">
+  <img src="gambar-saya.jpg" alt="Gambar saya">
+  <p>
+Haii sayang sayaaa,
+
+Sayaa rinduu kamu sangattt 🥺
+Saya tauu sayaa selalu banyak salah ngann kamu, selalu terkasar kata ngan kamuu dannn kadang-kadang sayaa tak dapatt bagii perhatian dan masa sayaa cukup untuk kamuu.
+
+Tapii saya nak kamuu tauu saya sayangg kamjuu sangatt ❤️
+Saya nak kita usaha sama-sama, jangan pernah penat untukk each otherr.
+
+I alwaysss doakan u happyy 🌹
+
+Your lovely future husband,
+Iminnnncemm 💖
+  </p>
+</div>
+
+<script>
+  let count = 0;
+
+  function takRindu() {
+    const btn = document.getElementById('takRindu');
+    count++;
+    if (count <= 3) {
+      btn.style.position = 'absolute';
+      btn.style.left = Math.random() * 70 + 'vw';
+      btn.style.top = Math.random() * 70 + 'vh';
+    } else {
+      alert('😜 WELKKK tak bole tekan!');
+    }
+  }
+
+  function rinduGila() {
+    document.getElementById('page1').classList.remove('active');
+    document.getElementById('page2').classList.add('active');
+  }
+
+  function hadiah1() {
+    alert('WELKK KENE PILIH DUA DUA 😆');
+  }
+
+  function hadiah2() {
+    alert('HAHAHA STRESS TAK YANGG 😂 PEGI PILIH YANG DUA DUA SANAA');
+  }
+
+  function duaDua() {
+    document.getElementById('page2').classList.remove('active');
+    document.getElementById('page3').classList.add('active');
+  }
+</script>
+
+</body>
+</html>
